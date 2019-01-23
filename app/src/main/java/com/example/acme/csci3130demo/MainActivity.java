@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     TextView Input;
     EditText user;
     Button go;
-    String txt_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +31,11 @@ public class MainActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txt_user = user.getText().toString();
-                if (txt_user.isEmpty()){
+                if (user.getText().toString().isEmpty()){
                     Toast.makeText(MainActivity.this, "Field can not be empty", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Input.setText(txt_user);
+                    Input.setText(user.getText().toString());
                 }
             }
         });
